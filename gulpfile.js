@@ -143,7 +143,8 @@ gulp.task('dev', gulp.series('compile', () => {
 gulp.task('init',function (cb) {
     const dirs=[
         './bin',
-        './src/bean'
+        './src/bean',
+        './src/database'
     ].map(function (item) {
         return path.join(__dirname,item);
     });
