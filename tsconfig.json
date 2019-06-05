@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "removeComments":true,
+    "noImplicitUseStrict":true,
+    "module": "commonjs",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports":true,
+    "sourceMap": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "typeRoots": [
+      "./types",
+      "node_modules/@types"
+    ],
+    "paths": {
+      "*": [
+        "*",
+        "node_modules/*"//,
+      ]
+    }
+  }//,
+//  "include": [
+//    "src/**/*",
+//    "types/*",
+//    "node_modules/@types/**/*",
+//    "node_modules/tz-library/**/*"
+//  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "koa-app",
+  "version": "1.0.0",
+  "description": "koa-template",
+  "main": "index.js",
+  "author": "tckxjzc",
+  "license": "MIT",
+  "scripts": {
+    "init": "gulp init",
+    "dev": "gulp dev",
+    "build": "gulp compile"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.7"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.4",
+    "@types/koa": "^2.0.48",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.0.40",
+    "@types/koa-session": "^5.10.0",
+    "@types/sequelize": "^4.28.3",
+    "colors": "^1.3.3",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-typescript": "^5.0.1",
+    "typescript": "^3.5.1"
+  }
+}
