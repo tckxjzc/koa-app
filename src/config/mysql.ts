@@ -4,7 +4,7 @@ import env from "./env";
  * mysql config
  */
 export default {
-    host:env.prods?'localhost':'tckxjzc.xyz',
+    host:'localhost',
     database:'',
     username:'root',
     password:'',

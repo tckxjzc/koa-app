@@ -7,7 +7,7 @@ const iName = `${serverConfig.name}:log`;
 const dName = `${serverConfig.name}:d`;
 debug.enable(iName);
 if (env.debug) {
-    debug.enable(dName);
+    debug.enable('*');
 }
 
 const i = debug(iName);

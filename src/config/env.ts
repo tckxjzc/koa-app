@@ -2,8 +2,8 @@
 /**
  * env
  */
-const isDev=process.env.TZ_ENV!='dev';
+const __DEV__=process.argv.includes('--dev');
 export default {
-    prods:isDev,
-    debug:isDev,
+    __DEV__,
+    debug:__DEV__,
 }
