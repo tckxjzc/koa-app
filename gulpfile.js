@@ -18,6 +18,7 @@ colors.setTheme({
     debug: 'magenta',
     error: 'red'
 });
+const tsProject = ts.createProject('tsconfig.json');
 
 
 //get ip
@@ -54,7 +55,7 @@ const watchList = [
 
 function getFileParent(name) {
     let index = name.lastIndexOf('/');
-    return name.substring(0, index).replace('/src/', '/bin/');
+    return name.substring(0, index).replace('/src', '/bin');
 }
 
 
@@ -114,7 +115,7 @@ const server = {
 //compile all
 gulp.task('compile', (cb) => {
     gulp.src(watchList)
-        .pipe(ts.createProject('tsconfig.json')())
+        .pipe(tsProject())
         .pipe(rename({
             extname: '.js'
         }))
@@ -126,14 +127,20 @@ gulp.task('dev', gulp.series('compile', () => {
     server.start();
     gulp.watch(watchList).on('change', (path) => {
         console.log(path.blue + '---changed'.green);
+        let hasError = false;
         gulp.src(path)
-            .pipe(ts.createProject('tsconfig.json')())
+            .pipe(tsProject().on('error',(e)=>{
+                console.log(e);
+                hasError=true;
+            }))
             .pipe(rename({
                 extname: '.js'
             }))
             .pipe(gulp.dest(getFileParent(path)))
             .on('end', () => {
-                server.restart()
+                if (!hasError) {
+                    server.restart();
+                }
             });
     });
 }));
